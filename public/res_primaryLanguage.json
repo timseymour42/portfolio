@@ -11,9 +11,9 @@
     },
     "projects": [
       {
-        "title": "Animal Shelter",
+        "titles": "Animal Shelter",
         "startDate": "2020",
-        "description": "The most expanded application I had opportunity to work with. I've learned many technologies and my code was reviewed by awesome curator. Application handles all adoption processess and allows to store all evidence on adopting animals from animal shelter.",
+        "descriptions": "The most expanded application I had opportunity to work with. I've learned many technologies and my code was reviewed by awesome curator. Application handles all adoption processess and allows to store all evidence on adopting animals from animal shelter.",
         "images": [
           "images/portfolio/animal-shelter/p1.jpg",
           "images/portfolio/animal-shelter/p2.jpg",
@@ -36,13 +36,22 @@
         ]
       },
       {
-        "title": "ShotQuality Kaggle Competition",
+        "title": ["ShotQuality Kaggle Competition",
+        "ShotQuality Kaggle Competition"],
         "startDate": "2023",
         "descriptions": ["I won first place in a data science competition focused on predicting offensive rebounding probability using player location data.",
-      "Hope this work"],
+                        "Hope this work"],
         "images": [
-          "images/portfolio/photography/shotquality.png",
-          "images/portfolio/animal-shelter/p2.jpg"
+          "images/portfolio/shotquality/sqlogo.png",
+          "images/portfolio/shotquality/heatmap.png",
+          "images/portfolio/shotquality/distances.png",
+          "images/portfolio/shotquality/boxout.png",
+          "images/portfolio/shotquality/spacing.png",
+          "images/portfolio/shotquality/model_performance.png",
+          "images/portfolio/shotquality/ensemble.png",
+          "images/portfolio/shotquality/channels.png",
+          "images/portfolio/shotquality/formula.png",
+          "images/portfolio/shotquality/feat.png"
         ],
         "url": "https://github.com/timseymour42/shotquality-offensive-rebounding",
         "technologies": [
@@ -57,9 +66,9 @@
         ]
       },
       {
-        "title": "3D Object Viewer",
+        "titles": "3D Object Viewer",
         "startDate": "2015",
-        "description": "One of the first apps I was working on my internship. I had to develop front-end implementation for app that shows 3D models of known buildings. This was also my first project in Angular framework. I've learned a lot!",
+        "descriptions": "One of the first apps I was working on my internship. I had to develop front-end implementation for app that shows 3D models of known buildings. This was also my first project in Angular framework. I've learned a lot!",
         "images": [
           "images/portfolio/adventure/p1.jpg",
           "images/portfolio/adventure/p2.jpg"

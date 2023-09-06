@@ -5,12 +5,32 @@ import AwesomeSliderStyles from "../scss/light-slider.scss";
 import AwesomeSliderStyles2 from "../scss/dark-slider.scss";
 import "react-awesome-slider/dist/custom-animations/scale-out-animation.css";
 class ProjectDetailsModal extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeIndex: 0,
+    };
+  }
+
+  handleSlideChange = (event) => {
+    // Update the activeIndex based on the slide event
+    this.setState({ activeIndex: event.currentIndex });
+  };
+
   render() {
+    let activeDescription = null;
+    if (this.props.data && this.props.data.descriptions) {
+      activeDescription = this.props.data.descriptions[this.state.activeIndex];
+    }
+    let activeTitle = null;
+    if (this.props.data && this.props.data.titles) {
+      activeTitle = this.props.data.titles[this.state.activeIndex];
+    }
     if (this.props.data) {
       const technologies = this.props.data.technologies;
       const images = this.props.data.images;
-      var title = this.props.data.title;
-      var descriptions = this.props.data.descriptions;
+      // var titles = this.props.data.titles;
+      // var descriptions = this.props.data.descriptions;
       var url = this.props.data.url;
       if (this.props.data.technologies) {
         var tech = technologies.map((icons, i) => {
@@ -31,11 +51,6 @@ class ProjectDetailsModal extends Component {
         if (this.props.data.images) {
           var img = images.map((elem, i) => {
             return <div key={i} data-src={elem} />;
-          });
-        }
-        if (this.props.data.descriptions) {
-          var description = descriptions.map((elem, i) => {
-            return <div key={i}> {elem} </div>;
           });
         }
       }
@@ -77,13 +92,14 @@ class ProjectDetailsModal extends Component {
               cssModule={[AwesomeSliderStyles, AwesomeSliderStyles2]}
               animation="scaleOutAnimation"
               className="slider-image"
+              onTransitionEnd={this.handleSlideChange}
             >
               {img}
             </AwesomeSlider>
           </div>
           <div className="col-md-10 mx-auto">
             <h3 style={{ padding: "5px 5px 0 5px" }}>
-              {title}
+              {activeTitle}
               {url ? (
                 <a
                   href={url}
@@ -98,7 +114,7 @@ class ProjectDetailsModal extends Component {
                 </a>
               ) : null}
             </h3>
-            <p className="modal-description">{description}</p>
+            <p className="modal-description">{activeDescription}</p>
             <div className="col-md-12 text-center">
               <ul className="list-inline mx-auto">{tech}</ul>
             </div>
