@@ -5,7 +5,7 @@ import reactIcon from "@iconify/icons-logos/react";
 import javaIcon from "@iconify/icons-logos/java";
 import mysqlIcon from "@iconify/icons-logos/mysql";
 import javascriptIcon from "@iconify/icons-logos/javascript";
-// import typescriptIcon from "@iconify/icons-logos/skill-icons:typescript";
+import neo4jIcon from "@iconify/icons-logos/neo4j";
 
 
 class About extends Component {
@@ -23,16 +23,21 @@ class About extends Component {
       <section id="about">
         <div className="col-md-12">
           <h1 style={{ color: "black", fontSize: "300%" }}>
-            <span>{sectionName}</span> About Me
+            <span>{sectionName}</span>
           </h1>
           <div className="row center mx-auto mb-5">
             <div className="col-md-4 mb-5 center">
               <div className="polaroid">
                 <span style={{ cursor: "auto" }}>
-                  <img
-                    height="250px"
+                <img
                     src={profilepic}
-                    alt="Skills"
+                    alt="Avatar placeholder"
+                    style={{
+                      display: 'block',
+                      marginLeft: 'auto',
+                      marginRight: 'auto'
+
+                    }}
                   />
                   <div className="icon-grid">
                   <Icon
@@ -55,10 +60,10 @@ class About extends Component {
                     icon={javascriptIcon}
                     style={{ fontSize: "600%", margin: "4% 2% 0 2%" }}
                   />
-                   {/* <Icon
-                    icon={typescriptIcon}
+                   <Icon
+                    icon={neo4jIcon}
                     style={{ fontSize: "600%", margin: "4% 2% 0 2%" }}
-                  /> */}
+                  />
                   </div>
                 </span>
               </div>
@@ -95,19 +100,10 @@ class About extends Component {
                     }}
                   >
                     <br />
-                    <span className="wave">{hello} Hey there </span>
+                    <span className="wave">{hello} </span>
                     <br />
                     <br />
-                    {about} 👋 I'm Tim. I am a data scienstist and a sports analytics nerd. The Yankees <img src={`${process.env.PUBLIC_URL}/images/team-logos/yankees.png`} 
-                                                                                                            alt="Yankees logo" 
-                                                                                                            style={{ width: '20px', height: '20px' }} />
-                                                                                                            , Patriots <img src={`${process.env.PUBLIC_URL}/images/team-logos/patriots.png`} 
-                                                                                                            alt="Patriots logo" 
-                                                                                                            style={{ width: '30px', height: '30px' }} />, 
-                                                                                                            and UConn basketball <img src={`${process.env.PUBLIC_URL}/images/team-logos/uconn.png`} 
-                                                                                                            alt="UConn logo" 
-                                                                                                            style={{ width: '21px', height: '25px' }} /> are my favorite teams. 
-                                                                                                            I got my start in data science because I love doing sports analytics projects to investigate trends in sports and uncover strategic advantages for coaching or the front office.
+                    {about} 
                   </div>
                 </div>
               </div>

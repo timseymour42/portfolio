@@ -36,10 +36,10 @@ class App extends Component {
         : window.$primaryLanguageIconId;
     document
       .getElementById(oppositeLangIconId)
-      .removeAttribute("filter", "brightness(40%)");
+      .removeAttribute("filter", "brightness(100%)");
     document
       .getElementById(pickedLangIconId)
-      .setAttribute("filter", "brightness(40%)");
+      .setAttribute("filter", "brightness(100%)");
   }
 
   componentDidMount() {
@@ -59,6 +59,7 @@ class App extends Component {
         this.setState({ resumeData: data });
       }.bind(this),
       error: function (xhr, status, err) {
+        console.error("Failed fetching data!");
         alert(err);
       },
     });
@@ -70,13 +71,15 @@ class App extends Component {
       dataType: "json",
       cache: false,
       success: function (data) {
+        console.log("Shared Data:", data); // Debugging line
         this.setState({ sharedData: data });
-        document.title = `${this.state.sharedData.basic_info.name}`;
       }.bind(this),
       error: function (xhr, status, err) {
+        console.error("Failed to get the")
         alert(err);
       },
     });
+    
   }
 
   render() {
@@ -85,33 +88,21 @@ class App extends Component {
         <Header sharedData={this.state.sharedData.basic_info} />
         <div className="col-md-12 mx-auto text-center language">
           <div
-            onClick={() =>
-              this.applyPickedLanguage(
-                window.$primaryLanguage,
-                window.$secondaryLanguageIconId
-              )
-            }
             style={{ display: "inline" }}
           >
             <span
               className="iconify language-icon mr-5"
-              data-icon="twemoji-flag-for-flag-united-kingdom"
+              data-icon="noto:basketball"
               data-inline="false"
               id={window.$primaryLanguageIconId}
             ></span>
           </div>
           <div
-            onClick={() =>
-              this.applyPickedLanguage(
-                window.$secondaryLanguage,
-                window.$primaryLanguageIconId
-              )
-            }
             style={{ display: "inline" }}
           >
             <span
               className="iconify language-icon"
-              data-icon="twemoji-flag-for-flag-poland"
+              data-icon="noto:baseball"
               data-inline="false"
               id={window.$secondaryLanguageIconId}
             ></span>

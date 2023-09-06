@@ -1,7 +1,7 @@
 {
     "basic_info": {
       "description_header": "Hi",
-      "description": "👋 I'm Davina Griss. Fictional person for preview purposes :) I'm working with newest front-end frameworks like Angular, React and Vue. What you are seeing now is portfolio template from Dorota1997. If you like this portfolio template, make sure to ⭐ the repository to make it more recognizable for other users. Thank you 💜",
+      "description": "👋 I'm Tim. I am a data scienstist and a sports analytics nerd. I recently graduated from Northeastern University with my Bachelor's in CS and Business. At Northeastern, I was vice president of the Sports Business Innovation Network and did analytics for the baseball team. I am currently looking for roles in Data Science, Machine Learning, and Data Engineering. ",
       "section_name": {
         "about": "About me",
         "projects": "Projects",
@@ -16,6 +16,7 @@
         "description": "The most expanded application I had opportunity to work with. I've learned many technologies and my code was reviewed by awesome curator. Application handles all adoption processess and allows to store all evidence on adopting animals from animal shelter.",
         "images": [
           "images/portfolio/animal-shelter/p1.jpg",
+          "images/portfolio/animal-shelter/p2.jpg",
           "images/portfolio/animal-shelter/p2.jpg"
         ],
         "url": "",
@@ -35,22 +36,23 @@
         ]
       },
       {
-        "title": "Photography",
-        "startDate": "2018",
-        "description": "Personal project for study subject. I was responsible for testing photography application that optimizes images with popular algorithms used by graphic editors like Pixlr or Adobe Photoshop. I've earned A grade :)",
+        "title": "ShotQuality Kaggle Competition",
+        "startDate": "2023",
+        "descriptions": ["I won first place in a data science competition focused on predicting offensive rebounding probability using player location data.",
+      "Hope this work"],
         "images": [
-          "images/portfolio/photography/p1.jpg",
-          "images/portfolio/photography/p2.jpg"
+          "images/portfolio/photography/shotquality.png",
+          "images/portfolio/animal-shelter/p2.jpg"
         ],
-        "url": "https://github.com",
+        "url": "https://github.com/timseymour42/shotquality-offensive-rebounding",
         "technologies": [
           {
-            "class": "devicon-react-original",
-            "name": "React"
+            "class": "devicon-python-plain",
+            "name": "Python"
           },
           {
-            "class": "devicon-javascript-plain",
-            "name": "JavaScript"
+            "class": "devicon-tensorflow-original",
+            "name": "TensorFlow"
           }
         ]
       },
@@ -81,37 +83,35 @@
     ],
     "experience": [
       {
-        "company": "DefOpenSource",
-        "title": "Front-End Developer",
-        "years": "10.2019 - present",
+        "company": "Veolia North America",
+        "title": "Data Scientist",
+        "years": "7.2022 - present",
         "mainTech": [
-          "Angular 8/9/10"
+          "Python"
         ],
         "technologies": [
-          "REST API",
-          "RxJS",
-          "JavaScript",
-          "Bootstrap",
-          "MDBootstrap",
-          "EF Core",
-          ".NET Core",
-          "SignalR",
-          "Angular Material"
+          "Python",
+          "Tableau",
+          "SQL Server",
+          "Jira",
+          "Scikit-Learn",
+          "Pandas",
+          "NumPy"
         ]
       },
       {
-        "company": "Serros Solutions",
-        "title": "Intern",
-        "years": "01.2018 - 09.2019",
+        "company": "Wayfair",
+        "title": "Data Analyst",
+        "years": "06.2021 - 12.2021",
         "mainTech": [
-          "Angular 7/8"
+          "Google BigQuery"
         ],
         "technologies": [
-          "RxJS",
-          "Django",
-          "PHP",
-          "JavaScript",
-          "DHTMLX Gantt"
+          "Google BigQuery",
+          "SQL Server",
+          "Python",
+          "Jupyter Notebook",
+          "Looker"
         ]
       }
     ]
