@@ -36,11 +36,12 @@
         ]
       },
       {
-        "title": ["ShotQuality Kaggle Competition",
-        "ShotQuality Kaggle Competition"],
+        "titles": ["ShotQuality Kaggle Competition", "ShotQuality Kaggle Competition", "Exploratory Data Analysis", "Baseline Model", "Assigning Boxout Responsibilities", "Spacing"],
         "startDate": "2023",
         "descriptions": ["I won first place in a data science competition focused on predicting offensive rebounding probability using player location data.",
-                        "Hope this work"],
+                        "I leveraged data visualizations to conduct a thorough exploratory analysis, covering both univariate and bivariate assessments. This allowed me to examine key patterns like the frequency of various shot locations (shown above), the frequency of different rebound types, and the intricate relationship between offensive rebound rates and variables like shot and player distances from the hoop. Through this analytical journey, I uncovered valuable insights that were instrumental for feature engineering. For instance, I identified specific zones on the court where shot distances with similar offensive rebound probabilities, as well as the critical role played by having multiple players near the basket.",
+                        "Following EDA, I developed a baseline XGBoost model using only player and shot distances from the hoop. This feature set achieved a cross validated log loss of 0.5809. The feature importances derived from the model reinforced the idea that offensive rebounding is a collective task requiring more than one well positioned offensive player. This model served as a point of comparison to evaluate the benefits of more complex feature engineering.",
+                        "Understanding which players are most likely to box out one another is crucial to understanding the chances of an offensive rebound. If an offensive player is in front of a defensive player, this cannot be captured by a distance to the hoop metric. To optimally choose which offensive player a defensive rebounder should box out, I employ the Hungarian Assignment Algorithm. This technique will use the distance from each defensive player to each offensive player and the betweenness centrality of the offensive player in a fully connected graph of the offense and the hoop. Once boxout responsibility estimates have been assigned, I calculate highly predicting features such as the boxout angle (angle from hoop to defender to offensive player) and boxout position (combination of offensive distance to the hoop and boxout angle) among many others."],
         "images": [
           "images/portfolio/shotquality/sqlogo.png",
           "images/portfolio/shotquality/heatmap.png",
