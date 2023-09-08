@@ -65,7 +65,7 @@ class ProjectDetailsModal extends Component {
         size="xl"
         aria-labelledby="contained-modal-title-vcenter"
         className="modal-inside"
-        style={{ height: '100vh' }} 
+        style={{ height: '100%' }} 
       >
         <span onClick={this.props.onHide} className="modal-close">
           <i className="fas fa-times fa-3x close-icon"></i>
