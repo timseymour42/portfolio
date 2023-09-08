@@ -1,0 +1,63 @@
+{
+    "basic_info": {
+      "name": "Tim Seymour",
+      "titles": [ "Data Scientist", "Sports Analytics Expert", "Medium Blogger", "Web Developer", "Data Engineer"],
+      "social": [
+        {
+          "name": "github",
+          "url": "https://github.com/timseymour42",
+          "class": "fab fa-github"
+        },
+        {
+          "name": "twitter",
+          "url": "https://www.twitter.com/timseymour421",
+          "class": "fab fa-twitter"
+        }
+      ],
+      "image": "myself/me_sunset.jpg"
+    },
+    "skills": {
+      "icons": [
+        {
+          "name": "MySql",
+          "class": "devicon-mysql-plain",
+          "level": "95"
+        },
+        {
+          "name": "Python",
+          "class": "devicon-python-plain",
+          "level": "95"
+        },
+        {
+          "name": "neo4j",
+          "class": "devicon-neo4j-plain",
+          "level": "80"
+        },
+        {
+          "name": "TypeScript",
+          "class": "devicon-typescript-plain",
+          "level": "90"
+        },
+        {
+          "name": "JavaScript",
+          "class": "devicon-javascript-plain",
+          "level": "70"
+        },
+        {
+          "name": "Tensorflow",
+          "class": "devicon-tensorflow-original",
+          "level": "85"
+        },
+        {
+          "name": "GCP",
+          "class": "devicon-googlecloud-plain",
+          "level": "65"
+        },
+        {
+          "name": "MySql",
+          "class": "devicon-mysql-plain",
+          "level": "60"
+        }
+      ]
+    }
+}
