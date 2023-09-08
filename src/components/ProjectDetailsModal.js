@@ -26,12 +26,16 @@ class ProjectDetailsModal extends Component {
     if (this.props.data && this.props.data.titles) {
       activeTitle = this.props.data.titles[this.state.activeIndex];
     }
+    let activeUrl = null;
+    if (this.props.data && this.props.data.titles) {
+      activeUrl = this.props.data.urls[this.state.activeIndex];
+    }
     if (this.props.data) {
       const technologies = this.props.data.technologies;
       const images = this.props.data.images;
       // var titles = this.props.data.titles;
       // var descriptions = this.props.data.descriptions;
-      var url = this.props.data.url;
+      // var url = this.props.data.url;
       if (this.props.data.technologies) {
         var tech = technologies.map((icons, i) => {
           return (
@@ -60,8 +64,8 @@ class ProjectDetailsModal extends Component {
         {...this.props}
         size="xl"
         aria-labelledby="contained-modal-title-vcenter"
-        centered
         className="modal-inside"
+        style={{ height: '100vh' }} 
       >
         <span onClick={this.props.onHide} className="modal-close">
           <i className="fas fa-times fa-3x close-icon"></i>
@@ -98,11 +102,11 @@ class ProjectDetailsModal extends Component {
             </AwesomeSlider>
           </div>
           <div className="col-md-10 mx-auto">
-            <h3 style={{ padding: "5px 5px 0 5px" }}>
+            <h3 style={{ padding: "5px 5px 0 5px", fontSize: '200%' }}>
               {activeTitle}
-              {url ? (
+              {activeUrl ? (
                 <a
-                  href={url}
+                  href={activeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="link-href"
@@ -114,7 +118,7 @@ class ProjectDetailsModal extends Component {
                 </a>
               ) : null}
             </h3>
-            <p className="modal-description">{activeDescription}</p>
+            <p className="modal-description" style={{ height: '18vh' }} >{activeDescription}</p>
             <div className="col-md-12 text-center">
               <ul className="list-inline mx-auto">{tech}</ul>
             </div>

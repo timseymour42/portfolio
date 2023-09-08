@@ -1,7 +1,7 @@
 {
     "basic_info": {
       "description_header": "Hi",
-      "description": "👋 I'm Tim. I am a data scienstist and a sports analytics nerd. I recently graduated from Northeastern University with my Bachelor's in CS and Business. At Northeastern, I was vice president of the Sports Business Innovation Network and did analytics for the baseball team. I am currently looking for roles in Data Science, Machine Learning, and Data Engineering. ",
+      "description": "👋 I'm Tim. I am a data scienstist and a sports analytics aficionado. I recently graduated from Northeastern University with my Bachelor's in CS and Business. At Northeastern, I was vice president of the Sports Business Innovation Network and did analytics for the baseball team. I am currently looking for roles in Data Science, Machine Learning, and Data Engineering. ",
       "section_name": {
         "about": "About me",
         "projects": "Projects",
@@ -11,37 +11,40 @@
     },
     "projects": [
       {
-        "titles": "Animal Shelter",
-        "startDate": "2020",
-        "descriptions": "The most expanded application I had opportunity to work with. I've learned many technologies and my code was reviewed by awesome curator. Application handles all adoption processess and allows to store all evidence on adopting animals from animal shelter.",
+        "titles": ["MLB Build a Team", "Medium Article"],
+        "startDate": "2022",
+        "descriptions": ["I built a web app hosted on render that allows curious baseball fans to see how many wins their dream team would win in a 162 game MLB season.",
+                        "I've authored a Medium article that provides an in-depth look at my modeling process. Stay tuned as I unveil exciting updates to the algorithm's architecture, including the integration of advanced calibration techniques that go beyond conventional linear models."],
         "images": [
-          "images/portfolio/animal-shelter/p1.jpg",
-          "images/portfolio/animal-shelter/p2.jpg",
-          "images/portfolio/animal-shelter/p2.jpg"
+          "images/portfolio/mlbbat/mlb.png",
+          "images/portfolio/mlbbat/medium.png"
         ],
-        "url": "",
+        "urls": ["https://github.com/timseymour42/MLB-Build-a-Team", "https://medium.com/@timseymour1042/mlb-build-a-team-7bd338abe2a2"],
         "technologies": [
           {
-            "class": "devicon-angularjs-plain",
-            "name": "Angular"
+            "class": "devicon-python-plain",
+            "name": "Python"
           },
           {
-            "class": "devicon-typescript-plain",
-            "name": "TypeScript"
-          },
-          {
-            "class": "devicon-csharp-plain",
-            "name": "C#"
+            "class": "devicon-mysql-plain",
+            "name": "MySQL"
           }
         ]
       },
       {
-        "titles": ["ShotQuality Kaggle Competition", "ShotQuality Kaggle Competition", "Exploratory Data Analysis", "Baseline Model", "Assigning Boxout Responsibilities", "Spacing"],
+        "titles": ["ShotQuality Kaggle Competition", "Exploratory Data Analysis", "Baseline Model", "Assigning Boxout Responsibilities", "Spacing", "Model Comparison", "Ensemble", "CNNs", "OFFREB+", "Basketball Strategy Takeaways"],
         "startDate": "2023",
         "descriptions": ["I won first place in a data science competition focused on predicting offensive rebounding probability using player location data.",
-                        "I leveraged data visualizations to conduct a thorough exploratory analysis, covering both univariate and bivariate assessments. This allowed me to examine key patterns like the frequency of various shot locations (shown above), the frequency of different rebound types, and the intricate relationship between offensive rebound rates and variables like shot and player distances from the hoop. Through this analytical journey, I uncovered valuable insights that were instrumental for feature engineering. For instance, I identified specific zones on the court where shot distances with similar offensive rebound probabilities, as well as the critical role played by having multiple players near the basket.",
-                        "Following EDA, I developed a baseline XGBoost model using only player and shot distances from the hoop. This feature set achieved a cross validated log loss of 0.5809. The feature importances derived from the model reinforced the idea that offensive rebounding is a collective task requiring more than one well positioned offensive player. This model served as a point of comparison to evaluate the benefits of more complex feature engineering.",
-                        "Understanding which players are most likely to box out one another is crucial to understanding the chances of an offensive rebound. If an offensive player is in front of a defensive player, this cannot be captured by a distance to the hoop metric. To optimally choose which offensive player a defensive rebounder should box out, I employ the Hungarian Assignment Algorithm. This technique will use the distance from each defensive player to each offensive player and the betweenness centrality of the offensive player in a fully connected graph of the offense and the hoop. Once boxout responsibility estimates have been assigned, I calculate highly predicting features such as the boxout angle (angle from hoop to defender to offensive player) and boxout position (combination of offensive distance to the hoop and boxout angle) among many others."],
+                        "I leveraged data visualizations to conduct a thorough exploratory analysis, covering both univariate and bivariate assessments. This allowed me to examine key patterns like the frequency of various shot locations (shown above), the frequency of different rebound types, and the intricate relationship between offensive rebound rates and variables like shot and player distances from the hoop. Through this analytical journey, I uncovered valuable insights that were instrumental for feature engineering. For instance, I identified shot distance zones with similar offensive rebound probabilities, as well as the critical role played by having multiple players near the basket.",
+                        "After the initial data exploration, I built a baseline model using XGBoost. The model only used basic features like the distance of players and the shot from the hoop. Despite its simplicity, it achieved a cross-validated log loss of 0.5809. The feature importances from this model further emphasized that offensive rebounding is a team effort, requiring multiple well-positioned offensive players. This baseline model served as a valuable benchmark for assessing the impact of more sophisticated feature engineering down the line.",
+                        "Understanding who's likely to box out whom is key to predicting the chances of an offensive rebound. Simply measuring distance to the hoop doesn't capture the full picture, especially when an offensive player is in front of a defender. To tackle this, I use the Hungarian Assignment Algorithm to determine the optimal boxout assignments for defensive players. This algorithm considers both the distance from each defender to each attacker, as well as the offensive player's influence on the court, measured by their betweenness centrality in a network that includes all offensive players and the hoop. Once these boxout assignments are made, I calculate important metrics like the boxout angle (the angle formed from the hoop to the defender and then to the offensive player) and boxout position (a metric that combines the offensive player's distance to the hoop and the boxout angle). These features turn out to be strong predictors in my analysis.",
+                        "Inspired by the insights from ShotQuality's Twitter, I set out to measure both offensive and defensive spacing on the basketball court. Good floor spacing can create opportunities for offensive rebounds. To assess this spacing, players on a team are arranged in a clockwise direction based on their angle to the baseline. Starting from the hoop, a line is drawn to the first player, then from that player to the second, and so on, ultimately forming a hexagon. The area of this hexagon serves as an estimate of the court's spacing.",
+                        "In this section, I compare the performance of different machine learning models in predicting offensive rebounds, measured by Log Loss. XGBoost comes out on top with a score of 0.5781, showing a meaningful improvement of 0.0028 over our baseline model. While Random Forest Classifier and Logistic Regression performed well, with scores of 0.5785 and 0.5792 respectively, they couldn't quite match XGBoost's efficacy. Given XGBoost's known capabilities for handling complex data structures and relationships, its leading performance aligns well with our expectations.",
+                        "I dive into the world of ensemble modeling with a StackingClassifier, which layers multiple base models and a meta-model to make its predictions. Our base models include XGBoost, Logistic Regression, and a Random Forest Classifier, each carefully tuned for optimal performance. We utilized Stratified K-Fold Cross-Validation for a balanced evaluation. Intriguingly, the ensemble's average Log Loss of 0.5781 matches the score of our top-performing individual model, XGBoost. While this shows that the ensemble model holds its own, it also indicates room for further experimentation to truly harness the collective strengths of our diverse individual models.",
+                        "I explore the innovative use of Convolutional Neural Networks (CNNs) for a nuanced, spatial analysis of basketball plays. CNNs excel in processing visual data, making them an ideal tool for capturing the spatial configurations of players on the court. The approach involves transforming traditional play-by-play data into a high-resolution grid, layered with specific game aspects like offense, defense, and shooting positions. Trained over 10 epochs, our CNN model yielded a promising Validation Loss of 0.5866. While these results are encouraging, they also signal room for optimization. Future work could involve architectural enhancements, hyperparameter fine-tuning, and data augmentation techniques like image rotation. All aimed at a deeper, more accurate understanding of in-game dynamics.",
+                        "Introducing OFFREB+, a novel basketball statistic aimed at providing a nuanced measure of an offensive player's rebounding effectiveness. Developed from the feature 'Boxout Position,' which has been instrumental in boosting our model's performance, OFFREB+ combines a player's offensive rebounding rate with a normalizing factor related to their average boxout position faced. By doing so, OFFREB+ offers a more context-rich assessment of a player's ability to secure offensive rebounds relative to their positional challenges. The formula encapsulates variables like the angle from the hoop to the defender and the offensive player, as well as the offensive player's distance to the hoop. OFFREB+ could be a game-changer in evaluating individual performance against expectations in the realm of offensive rebounding.",
+                        "In this section, I discuss critical basketball strategies informed by our model's feature importances. 'boxout_position_mean' and 'log_boxout_angle_mean' stand out for their influence, underscoring the essential strategy of staying between your man and the basket for effective rebounding. On another note, the feature 'off_within_10ft_weakside_sum' points to the importance of having players on the weak side of the court, validating the tactic to prioritize weakside presence for advantageous rebounding positions. Lastly, 'second_closest_off_to_hoop' highlights the significance of multiple offensive players being near the hoop, supporting the strategy to delegate multiple players to crash the offensive boards, though this comes with the risk of being more exposed to transition counter-attacks. Together, these key takeaways offer coaches and players targeted strategies to enhance both rebounding and overall gameplay."
+                      ],
         "images": [
           "images/portfolio/shotquality/sqlogo.png",
           "images/portfolio/shotquality/heatmap.png",
@@ -54,7 +57,10 @@
           "images/portfolio/shotquality/formula.png",
           "images/portfolio/shotquality/feat.png"
         ],
-        "url": "https://github.com/timseymour42/shotquality-offensive-rebounding",
+        "urls": ["https://github.com/timseymour42/shotquality-offensive-rebounding", "https://www.kaggle.com/code/timseymour/sq-rebounding-submission#Exploratory-Data-Analysis-&-Data-Preprocessing", "https://www.kaggle.com/code/timseymour/sq-rebounding-submission#Baseline-Model",
+                "https://www.kaggle.com/code/timseymour/sq-rebounding-submission#Complex-Feature-Engineering", "https://www.kaggle.com/code/timseymour/sq-rebounding-submission#Complex-Feature-Engineering", "https://www.kaggle.com/code/timseymour/sq-rebounding-submission#Model-Experimentation",
+                "https://www.kaggle.com/code/timseymour/sq-rebounding-submission#Stacking-Classifier-for-Model-Ensembling", "https://www.kaggle.com/code/timseymour/sq-rebounding-submission#Convolutional-Neural-Network-(CNN)-for-Spatial-Analysis", "https://www.kaggle.com/code/timseymour/sq-rebounding-submission#Conclusion",
+                "https://www.kaggle.com/code/timseymour/sq-rebounding-submission#Conclusion"],
         "technologies": [
           {
             "class": "devicon-python-plain",
@@ -67,26 +73,17 @@
         ]
       },
       {
-        "titles": "3D Object Viewer",
-        "startDate": "2015",
-        "descriptions": "One of the first apps I was working on my internship. I had to develop front-end implementation for app that shows 3D models of known buildings. This was also my first project in Angular framework. I've learned a lot!",
+        "titles": ["Kelly Criterion Feature"],
+        "startDate": "2023",
+        "descriptions": ["Contributed to the open source repository entitled NBA-Machine-Learning-Sports-Betting. The repo is designed to predict the outcome and point total of an NBA game. I implemented a Kelly Criterion feature as a feature flag, allowing users to determine the optimal wager amount based on the gap between the model’s output and the inputted sportsbook’s odds."],
         "images": [
-          "images/portfolio/adventure/p1.jpg",
-          "images/portfolio/adventure/p2.jpg"
+          "images/portfolio/nbamlsb/nba.png"
         ],
-        "url": "https://github.com",
+        "urls": ["https://github.com/kyleskom/NBA-Machine-Learning-Sports-Betting"],
         "technologies": [
           {
-            "class": "devicon-angularjs-plain",
-            "name": "Angular"
-          },
-          {
-            "class": "devicon-typescript-plain",
-            "name": "TypeScript"
-          },
-          {
-            "class": "devicon-csharp-plain",
-            "name": "C#"
+            "class": "devicon-python-plain",
+            "name": "Python"
           }
         ]
       }

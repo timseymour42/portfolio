@@ -22,7 +22,7 @@ class Projects extends Component {
         return (
           <div
             className="col-sm-12 col-md-6 col-lg-4"
-            key={projects.title}
+            key={projects.titles[0]}
             style={{ cursor: "pointer" }}
           >
             <span className="portfolio-item d-block">
@@ -32,12 +32,12 @@ class Projects extends Component {
                     src={projects.images[0]}
                     alt="projectImages"
                     height="230"
-                    style={{maxWidth: "100%", height: "auto", marginBottom: 0, paddingBottom: 0, position: 'relative'}}
+                    style={{maxWidth: "100%", minHeight: "80%", marginBottom: 0, paddingBottom: 0, position: 'relative'}}
                   />
                   <span className="project-date">{projects.startDate}</span>
                   <br />
                   <p className="project-title-settings mt-3">
-                    {projects.title}
+                    {projects.titles[0]}
                   </p>
                 </div>
               </div>
