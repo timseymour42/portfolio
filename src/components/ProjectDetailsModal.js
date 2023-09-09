@@ -17,6 +17,13 @@ class ProjectDetailsModal extends Component {
     this.setState({ activeIndex: event.currentIndex });
   };
 
+  resetActiveIndexAndClose = () => {
+    // Reset activeIndex state to 0
+    this.setState({ activeIndex: 0 });
+    // Call the parent component's onHide function
+    this.props.onHide();
+  };
+
   render() {
     let activeDescription = null;
     if (this.props.data && this.props.data.descriptions) {
@@ -42,7 +49,7 @@ class ProjectDetailsModal extends Component {
             <li className="list-inline-item mx-3" key={i}>
               <span>
                 <div className="text-center">
-                  <i className={icons.class} style={{ fontSize: "300%" }}>
+                  <i className={icons.class} style={{ fontSize: "100%" }}>
                     <p className="text-center" style={{ fontSize: "30%" }}>
                       {icons.name}
                     </p>
@@ -65,9 +72,9 @@ class ProjectDetailsModal extends Component {
         size="xl"
         aria-labelledby="contained-modal-title-vcenter"
         className="modal-inside"
-        style={{ height: '100%' }} 
+        style={{ height: '100vh' }} 
       >
-        <span onClick={this.props.onHide} className="modal-close">
+        <span onClick={this.resetActiveIndexAndClose} className="modal-close">
           <i className="fas fa-times fa-3x close-icon"></i>
         </span>
         <div className="col-md-12">
@@ -117,11 +124,11 @@ class ProjectDetailsModal extends Component {
                   ></i>
                 </a>
               ) : null}
+              <span style={{ float: 'right' }}>
+                {tech}
+              </span>
             </h3>
-            <p className="modal-description" style={{ height: '18vh' }} >{activeDescription}</p>
-            <div className="col-md-12 text-center">
-              <ul className="list-inline mx-auto">{tech}</ul>
-            </div>
+            <p className="modal-description" style={{ height: 'auto' }} >{activeDescription}</p>
           </div>
         </div>
       </Modal>
