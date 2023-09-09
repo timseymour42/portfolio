@@ -13,7 +13,7 @@
       {
         "titles": ["MLB Build a Team", "Medium Article"],
         "startDate": "2022",
-        "descriptions": ["I built a web app hosted on render that allows curious baseball fans to see how many wins their dream team would win in a 162 game MLB season.",
+        "descriptions": ["I developed a web app, hosted on Render, that empowers passionate baseball fans to project the number of wins their dream team could secure in a full 162-game MLB season. This platform serves as an invaluable tool for multiple use-cases, enhancing the fan experience in a number of ways. For instance, it can be utilized for roster construction, allowing fans to experiment with various lineups and pitching rotations to find the optimal configuration. This helps shed light on potential trades or acquisitions that could be beneficial for a team. Additionally, it serves as a robust player evaluation tool, enabling users to quantify the impact of individual athletes on a team's overall performance. By allowing fans to manipulate rosters and view the resulting projections, the web app adds a new, data-driven dimension to the way fans engage with the sport.",
                         "I've authored a Medium article that provides an in-depth look at my modeling process. Stay tuned as I unveil exciting updates to the algorithm's architecture, including the integration of advanced calibration techniques that go beyond conventional linear models."],
         "images": [
           "images/portfolio/mlbbat/mlb.png",
@@ -73,11 +73,13 @@
         ]
       },
       {
-        "titles": ["Kelly Criterion Feature"],
+        "titles": ["Kelly Criterion Feature", "Kelly Criterion Feature"],
         "startDate": "2023",
-        "descriptions": ["Contributed to the open source repository entitled NBA-Machine-Learning-Sports-Betting. The repo is designed to predict the outcome and point total of an NBA game. I implemented a Kelly Criterion feature as a feature flag, allowing users to determine the optimal wager amount based on the gap between the model’s output and the inputted sportsbook’s odds."],
+        "descriptions": ["Made a significant contribution to the open-source project, NBA-Machine-Learning-Sports-Betting, aimed at predicting NBA game outcomes and point totals. I integrated a Kelly Criterion feature through a feature flag, empowering users to calculate the optimal wager amount by comparing the model's predictions with the sportsbook's odds.",
+                        "In the Kelly Criterion section, users gain a valuable benchmark for determining mathematically sound and responsible wager amounts. As illustrated in the example, the model identifies a betting edge, and my feature subsequently recommends an appropriate wager amount based on the expected value of the bet."],
         "images": [
-          "images/portfolio/nbamlsb/nba.png"
+          "images/portfolio/nbamlsb/nba.png",
+          "images/portfolio/nbamlsb/KC.png"
         ],
         "urls": ["https://github.com/kyleskom/NBA-Machine-Learning-Sports-Betting"],
         "technologies": [
