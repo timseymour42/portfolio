@@ -12,6 +12,16 @@
           "name": "twitter",
           "url": "https://www.twitter.com/timseymour421",
           "class": "fab fa-twitter"
+        },
+        {
+          "name": "linkedin",
+          "url": "https://www.linkedin.com/in/timseymour42/",
+          "class": "fab fa-linkedin"
+        },
+        {
+          "name": "email",
+          "url": "mailto:seymour.ti@northeastern.edu",
+          "class": "far fa-envelope"
         }
       ],
       "image": "myself/me_sunset.jpg"

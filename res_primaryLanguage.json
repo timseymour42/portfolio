@@ -32,9 +32,10 @@
         ]
       },
       {
-        "titles": ["ShotQuality Kaggle Competition", "Exploratory Data Analysis", "Baseline Model", "Assigning Boxout Responsibilities", "Spacing", "Model Comparison", "Ensemble", "CNNs", "OFFREB+", "Basketball Strategy Takeaways"],
+        "titles": ["ShotQuality Kaggle Competition", "Data Preprocessing", "Exploratory Data Analysis", "Baseline Model", "Assigning Boxout Responsibilities", "Spacing", "Model Comparison", "Ensemble", "CNNs", "OFFREB+", "Basketball Strategy Takeaways"],
         "startDate": "2023",
-        "descriptions": ["I won first place in a data science competition focused on predicting offensive rebounding probability using player location data.",
+        "descriptions": ["I won first place out of twenty submissions in a data science competition focused on predicting offensive rebounding probability using player location data.",
+                        "In the data preprocessing stage, I transformed raw player coordinate data to create meaningful, high-level features that capture complex spatial relationships on the basketball court. I employed geometric functions to calculate essential metrics such as distance between players, reference angles, and various spatial areas. To further enrich our dataset, we engaged in feature engineering by introducing categorical attributes like 'Shot Distance Zone,' 'Corner Shot,' and 'Fastbreak Probable.' These categorical variables were then one-hot encoded to make them more digestible for our machine learning models. Special scenarios, such as when a shot was taken from behind the basket or when the shooter was the closest player to the basket, were also captured. Finally, all numerical features were standardized using a Standard Scaler to ensure model robustness. This comprehensive preprocessing pipeline has been instrumental in enhancing the model's ability to understand the intricate spatial dynamics involved in basketball.",
                         "I leveraged data visualizations to conduct a thorough exploratory analysis, covering both univariate and bivariate assessments. This allowed me to examine key patterns like the frequency of various shot locations (shown above), the frequency of different rebound types, and the intricate relationship between offensive rebound rates and variables like shot and player distances from the hoop. Through this analytical journey, I uncovered valuable insights that were instrumental for feature engineering. For instance, I identified shot distance zones with similar offensive rebound probabilities, as well as the critical role played by having multiple players near the basket.",
                         "After the initial data exploration, I built a baseline model using XGBoost. The model only used basic features like the distance of players and the shot from the hoop. Despite its simplicity, it achieved a cross-validated log loss of 0.5809. The feature importances from this model further emphasized that offensive rebounding is a team effort, requiring multiple well-positioned offensive players. This baseline model served as a valuable benchmark for assessing the impact of more sophisticated feature engineering down the line.",
                         "Understanding who's likely to box out whom is key to predicting the chances of an offensive rebound. Simply measuring distance to the hoop doesn't capture the full picture, especially when an offensive player is in front of a defender. To tackle this, I use the Hungarian Assignment Algorithm to determine the optimal boxout assignments for defensive players. This algorithm considers both the distance from each defender to each attacker, as well as the offensive player's influence on the court, measured by their betweenness centrality in a network that includes all offensive players and the hoop. Once these boxout assignments are made, I calculate important metrics like the boxout angle (the angle formed from the hoop to the defender and then to the offensive player) and boxout position (a metric that combines the offensive player's distance to the hoop and the boxout angle). These features turn out to be strong predictors in my analysis.",
@@ -46,18 +47,19 @@
                         "In this section, I discuss critical basketball strategies informed by our model's feature importances. 'boxout_position_mean' and 'log_boxout_angle_mean' stand out for their influence, underscoring the essential strategy of staying between your man and the basket for effective rebounding. On another note, the feature 'off_within_10ft_weakside_sum' points to the importance of having players on the weak side of the court, validating the tactic to prioritize weakside presence for advantageous rebounding positions. Lastly, 'second_closest_off_to_hoop' highlights the significance of multiple offensive players being near the hoop, supporting the strategy to delegate multiple players to crash the offensive boards, though this comes with the risk of being more exposed to transition counter-attacks. Together, these key takeaways offer coaches and players targeted strategies to enhance both rebounding and overall gameplay."
                       ],
         "images": [
-          "images/portfolio/shotquality/sqlogo.png",
+          "images/portfolio/shotquality/firstplace.png",
+          "images/portfolio/shotquality/data_pre.png",
           "images/portfolio/shotquality/heatmap.png",
           "images/portfolio/shotquality/distances.png",
-          "images/portfolio/shotquality/boxout.png",
+          "images/portfolio/shotquality/boxout2.png",
           "images/portfolio/shotquality/spacing.png",
-          "images/portfolio/shotquality/model_performance.png",
-          "images/portfolio/shotquality/ensemble.png",
+          "images/portfolio/shotquality/model_comp.png",
+          "images/portfolio/shotquality/diagram.png",
           "images/portfolio/shotquality/channels.png",
           "images/portfolio/shotquality/formula.png",
-          "images/portfolio/shotquality/feat.png"
+          "images/portfolio/shotquality/feat_import.png"
         ],
-        "urls": ["https://github.com/timseymour42/shotquality-offensive-rebounding", "https://www.kaggle.com/code/timseymour/sq-rebounding-submission#Exploratory-Data-Analysis-&-Data-Preprocessing", "https://www.kaggle.com/code/timseymour/sq-rebounding-submission#Baseline-Model",
+        "urls": ["https://github.com/timseymour42/shotquality-offensive-rebounding", "https://www.kaggle.com/code/timseymour/sq-rebounding-submission#Exploratory-Data-Analysis-&-Data-Preprocessing", "https://www.kaggle.com/code/timseymour/sq-rebounding-submission#Exploratory-Data-Analysis-&-Data-Preprocessing", "https://www.kaggle.com/code/timseymour/sq-rebounding-submission#Baseline-Model",
                 "https://www.kaggle.com/code/timseymour/sq-rebounding-submission#Complex-Feature-Engineering", "https://www.kaggle.com/code/timseymour/sq-rebounding-submission#Complex-Feature-Engineering", "https://www.kaggle.com/code/timseymour/sq-rebounding-submission#Model-Experimentation",
                 "https://www.kaggle.com/code/timseymour/sq-rebounding-submission#Stacking-Classifier-for-Model-Ensembling", "https://www.kaggle.com/code/timseymour/sq-rebounding-submission#Convolutional-Neural-Network-(CNN)-for-Spatial-Analysis", "https://www.kaggle.com/code/timseymour/sq-rebounding-submission#Conclusion",
                 "https://www.kaggle.com/code/timseymour/sq-rebounding-submission#Conclusion"],
