@@ -46,6 +46,17 @@ class Projects extends Component {
         );
       });
     }
+    if (this.props.sharedBasicInfo) {
+      var networks = this.props.sharedBasicInfo.social.map(function (network) {
+        return (
+          <span key={network.name} className="m-4">
+            <a href={network.url} target="_blank" rel="noopener noreferrer">
+              <i className={network.class}></i>
+            </a>
+          </span>
+        );
+      });
+    }
 
     return (
       <section id="portfolio">
@@ -62,7 +73,9 @@ class Projects extends Component {
             data={this.state.deps}
           />
         </div>
+        <div className="social-links text-center" style={{ fontSize: '50px', color: 'black' }}>{networks} </div>
       </section>
+      
     );
   }
 }
